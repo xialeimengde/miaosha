@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package miaosha;
+
+message MiaoshaRequest {
+  string user_openid = 1;
+  string user_session = 2;
+}
+
+message MiaoshaResponse {
+  string result = 1;
+  string ret_msg = 2;
+}
+
+service MiaoshaService {
+  rpc miaosha(MiaoshaRequest) returns (MiaoshaResponse);
+}
